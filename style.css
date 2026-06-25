@@ -1,0 +1,749 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =====================
+   TOPO DO SITE
+   ===================== */
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #4746465d;
+}
+
+.tittle-menu {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+}
+
+.logo > p {
+    font-family: 'Montserrat', sans-serif;
+    color: #888;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 8px;
+    margin-bottom: 25px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.menu > a {
+    font-family: 'Montserrat', sans-serif;
+    color: #1a1a1a;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.menu > a:hover {
+    opacity: 1;
+    color: #d4af37;
+}
+
+.hamburger {
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: 20px;
+}
+
+.cart-icon-container {
+    position: absolute;
+    top: 35px;
+    right: 25px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.fa-solid {
+    display: block;
+    font-size: 25px;
+    margin-top: 6px;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #a38a63;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .cart-icon-container {
+        right: 30px;
+        top: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+
+    .container {
+        padding-bottom: 0px;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 20px;
+        gap: 20px;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    .menu.active {
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.945);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+        padding-top: 100px;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 10001;
+    }
+
+    nav > a {
+        text-decoration: underline;
+    }
+}
+
+/* =====================
+   HERO
+   ===================== */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('/fotos/brasil.jpg') center / cover no-repeat;
+    overflow: hidden;
+}
+
+/* Gradiente mais dramático para destacar o texto branco */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* TÍTULO EM RELEVO / TEXTO VAZADO (Estilo Streetwear) */
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 12vw, 3rem); /* Gigante e imponente */
+    font-weight: 900; /* Peso máximo da fonte */
+    text-transform: uppercase;
+    letter-spacing: 0px; /* Letras bem juntas para dar peso */
+    line-height: 0.9;
+    margin-bottom: 30px;
+    margin-top: -50px;
+    color: #fff;
+    
+    /* Efeito de texto vazado moderno */
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* Subtítulo curto e direto como uma etiqueta */
+.hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 6px; /* Letras bem espaçadas contrastando com o título */
+    color: hwb(49 0% 0%); /* Amarelo da seleção cirúrgico, apenas aqui */
+    margin-top: 30px;
+    padding: 5px 0;
+}
+
+/* Botão com presença */
+.hero-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 15px 45px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-decoration: none;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+    margin-top: 100px;
+}
+
+.hero-btn:hover {
+    background-color: transparent;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* =====================
+   PRODUTOS
+   ===================== */
+
+.container-produtos {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.sessao-titulo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sessao-titulo span {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: #a38a63;
+    font-weight: 700;
+}
+
+.sessao-titulo h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    margin-top: 10px;
+    color: #1a1a1a;
+}
+
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 40px 20px;
+}
+
+.card-produto {
+    position: relative;
+    background: #fff;
+    transition: all 0.4s ease;
+}
+
+.card-imagem {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+}
+/* A TAG DE LANÇAMENTO */
+.tag-lancamento {
+    position: absolute;
+    top: 10px; /* Distância do topo */
+    left: 10px; /* Distância da esquerda */
+    z-index: 3; /* Fica acima da imagem do produto */
+    
+    /* Design Minimalista / Streetwear */
+    background-color: #000000a2; /* Preto sólido (ou use #FFD100 se quiser o amarelo da seleção) */
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2.0px;
+    
+    /* Espaçamento interno */
+    padding: 6px 14px;
+    border-radius: 2px; /* Cantos quase retos para parecer mais premium */
+    
+    /* Sutil sombra para destacar caso a foto do produto seja escura */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+    pointer-events: none; /* Impede que o clique do usuário trave na tag */
+}
+
+.card-imagem.esgotado-img::after {
+    content: "ESGOTADO";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e0e0e0;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+}
+
+.card-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-produto:hover img {
+    transform: scale(1.08);
+}
+
+.cores {
+    display: flex;
+    gap: 12px;
+    margin: 15px 0px -5px 0px;
+}
+
+.cor {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cor::before {
+    content: "a";
+    position: relative;
+    top: 10px;
+    bottom: 0px;
+    left: 10px;
+    right: 0px;
+    color: transparent;
+}
+
+.cor:hover { transform: scale(1.2); }
+.cor.ativa { transform: scale(1.2); }
+
+.add-to-cart,
+.esgotado {
+    width: 100%;
+    padding: 15px;
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid #1a1a1a;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    display: block;
+}
+
+.add-to-cart:hover,
+.esgotado {
+    background: transparent;
+    color: #1a1a1a;
+}
+
+.card-info {
+    padding: 20px 0;
+    text-align: left;
+}
+
+.card-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.precos {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.preco-antigo {
+    display: none;
+    font-size: 13px;
+    color: #999;
+    text-decoration: line-through;
+    font-weight: 300;
+}
+
+.no { display: none; }
+
+.preco-novo {
+    font-size: 18px;
+    color: #a38a63;
+    font-weight: 700;
+}
+
+.parcelas {
+    display: none;
+    font-size: 11px;
+    color: #666;
+    letter-spacing: 0.5px;
+}
+
+.parcelas-esgotado { display: none; }
+
+@media (max-width: 768px) {
+    .grid-produtos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .card-info h3 { font-size: 11px; }
+    .preco-novo { font-size: 15px; }
+
+    .add-to-cart,
+    .esgotado {
+        display: block !important;
+        padding: 10px !important;
+        font-size: 10px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .add-to-cart {
+        position: relative !important;
+        bottom: 0 !important;
+        display: block !important;
+        background: #1a1a1a;
+        margin-top: 10px;
+        padding: 12px !important;
+    }
+}
+
+/* =====================
+   SIDEBAR CARRINHO
+   ===================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 350px;
+    height: 100%;
+    background: #fff;
+    z-index: 2000;
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.active { right: 0; }
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1900;
+    display: none;
+}
+
+#overlay.active { display: block; }
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+#fechar-carrinho {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#lista-carrinho {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    list-style: none;
+}
+
+.sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.total-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+#finalizar-pedido {
+    width: 100%;
+    padding: 15px;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-limpar {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: transparent;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-limpar:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.btn-limpar:active {
+    transform: scale(0.97);
+}
+
+.item-carrinho {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f2f2f2;
+    align-items: center;
+}
+
+.img-mini {
+    width: 70px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.detalhes-item { flex: 1; }
+
+.nome-item {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #1a1a1a;
+}
+
+.preco-item {
+    font-size: 14px;
+    color: #a38a63;
+    margin-bottom: 8px;
+}
+
+.btn-remover {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 11px;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+}
+
+.btn-remover:hover { color: #ff4d4d; }
+
+#lista-carrinho::-webkit-scrollbar { width: 5px; }
+#lista-carrinho::-webkit-scrollbar-thumb { background: #e0e0e0; }
+
+/* =====================
+   MODAL IMAGEM
+   ===================== */
+
+.modal-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+.modal-img.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-img img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 130px;
+    right: 45px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* =====================
+   FOOTER
+   ===================== */
+
+.footer {
+    background-color: #000000ef;
+    color: #fff;
+    padding: 80px 20px 40px;
+    border-top: 1px solid #eee;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+}
+
+.footer-column h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.footer-column a,
+.footer-column p {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.footer-column a:hover { color: #d4af37; }
+
+.footer-bottom {
+    margin-top: 60px;
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #f9f9f9;
+}
+
+.footer-bottom p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 8px;
+    margin-bottom: 5px;
+    letter-spacing: 3px;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
