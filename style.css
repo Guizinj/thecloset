@@ -171,18 +171,227 @@ a {
 
 /* =====================
    HERO
+   
+   ===================== */
+
+
+   /* =====================
+   HERO
    ===================== */
 .hero {
-    position: relative;
-    width: 100%;
-    min-height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: url('brasil.jpg') center / cover no-repeat;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  background: #0d0d0d;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
+
+/* Imagem do produto */
+.hero-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Conteúdo principal */
+.hero-main {
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 40px;
+  gap: 15px;
+}
+.hero-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.9;
+  color: rgb(255, 255, 255);
+  border-left: 1px solid rgba(255, 255, 255, 0.308);
+  padding-left: 16px;
+  margin: 0;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.eyebrow-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #ffdf00;
+}
+
+.hero-title-block {
+  margin-bottom: 28px;
+}
+
+.hero-title-top {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  line-height: 0.88;
+  color: #fff;
+  display: block;
+}
+
+.hero-title-mid {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 300;
+  font-style: italic;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  line-height: 0.88;
+  color: rgba(255, 255, 255, 0.568);
+  display: block;
+}
+
+.hero-title-bot {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  line-height: 0.88;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.63);
+  display: block;
+}
+
+.hero-body-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  padding-bottom: 36px;
+}
+
+.hero-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 340px;
+}
+
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-btn-main {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #000;
+  background: #fff;
+  border: none;
+  padding: 14px 28px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-btn-main:hover {
+  background: #ffdf00;
+}
+
+.hero-btn-ghost {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  background: transparent;
+  border: 0.5px solid rgba(255,255,255,0.15);
+  padding: 14px 22px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-btn-ghost:hover {
+  border-color: rgba(255,255,255,0.4);
+  color: #fff;
+}
+
+/* Bottom Bar */
+.hero-bottombar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
+  border-top: 0.5px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+}
+
+.bottom-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+.bottom-scroll {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+
+.scroll-arrow {
+  width: 20px;
+  height: 20px;
+  border: 0.5px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 /* Gradiente mais dramático para destacar o texto branco */
 .hero::before {
@@ -193,67 +402,9 @@ a {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
-    z-index: 1;
+    z-index: 5;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 0 20px;
-    width: 100%;
-}
-
-/* TÍTULO EM RELEVO / TEXTO VAZADO (Estilo Streetwear) */
-.hero-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(2rem, 12vw, 3rem); /* Gigante e imponente */
-    font-weight: 900; /* Peso máximo da fonte */
-    text-transform: uppercase;
-    letter-spacing: 0px; /* Letras bem juntas para dar peso */
-    line-height: 0.9;
-    margin-bottom: 30px;
-    margin-top: -50px;
-    color: #fff;
-    
-    /* Efeito de texto vazado moderno */
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-    text-shadow: 0 20px 50px rgba(0,0,0,0.5);
-}
-
-/* Subtítulo curto e direto como uma etiqueta */
-.hero-subtitle {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(0.8rem, 2vw, 1.1rem);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 6px; /* Letras bem espaçadas contrastando com o título */
-    color: hwb(49 0% 0%); /* Amarelo da seleção cirúrgico, apenas aqui */
-    margin-top: 30px;
-    padding: 5px 0;
-}
-
-/* Botão com presença */
-.hero-btn {
-    display: inline-block;
-    background-color: #ffffff;
-    color: #000000;
-    padding: 15px 45px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-decoration: none;
-    border: 2px solid #fff;
-    transition: all 0.3s ease;
-    margin-top: 100px;
-}
-
-.hero-btn:hover {
-    background-color: transparent;
-    color: #fff;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-}
 
 /* =====================
    PRODUTOS
