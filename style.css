@@ -911,3 +911,54 @@ a {
         gap: 15px;
     }
 }
+
+
+
+
+/* =========================================
+   TEMA: LUXO E CLEAN (VINHO E MARROM)
+   ========================================= */
+
+.hero-luxo {
+    background-color: #FBF9F6; /* Fundo creme bem suave, traz aspecto clean e luxuoso */
+}
+
+.hero-luxo .eyebrow-text {
+    color: #7A2F3D; /* Tom de Vinho elegante */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.hero-luxo .hero-title-top, 
+.hero-luxo .hero-title-bot {
+    color: #38241B; /* Marrom profundo e escuro */
+}
+
+.hero-luxo .hero-title-mid {
+    color: #7A2F3D; /* Vinho, destacando o tom da marca */
+}
+
+.hero-luxo .hero-desc {
+    color: #5D463C; /* Marrom suave para o texto, facilitando a leitura */
+}
+
+/* Estilização do novo botão de luxo */
+.hero-luxo .btn-luxo {
+    background-color: #38241B; /* Marrom escuro */
+    color: #FFFFFF;
+    border: 1px solid #38241B;
+    transition: all 0.3s ease;
+}
+
+.hero-luxo .btn-luxo:hover {
+    background-color: #7A2F3D; /* No hover, o botão muda para Vinho */
+    border-color: #7A2F3D;
+    color: #FFFFFF;
+    transform: translateY(-2px); /* Leve efeito flutuante elegante */
+}
+
+.hero-luxo .bottom-scroll {
+    color: #5D463C; 
+}
